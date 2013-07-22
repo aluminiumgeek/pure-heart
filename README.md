@@ -3,7 +3,7 @@ pure-heart
 
 See the stuff your friends liked. 
 
-Working version can be found on [like.0x80.ru](http://like.0x80.ru).
+Production version runs on [like.0x80.ru](http://like.0x80.ru).
 
 ### Requirements
 * [MongoDB](http://www.mongodb.org/)

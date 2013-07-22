@@ -1,0 +1,16 @@
+div(ng-include='"partials/menu"').header
+
+#login-page(ng-show='showlogin')
+    div.l-box
+        h2 Вход
+    div.description
+        p С помощью этого сервиса вы можете смотреть, какие записи из различных сообществ понравились вашим друзьям.
+
+        p.login-button
+            span(ng-click='vklogin()')#login_button
+                Войти
+
+#already-logged(ng-if='!showlogin')
+    div.l-box
+        h2 Вы уже залогинены!
+

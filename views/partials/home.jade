@@ -1,0 +1,19 @@
+div(ng-include='"partials/menu"').header
+
+div.pure-u-1
+    div.l-box
+        h2 Друзья
+
+#home(ng-show='user_list')
+    div(ng-repeat='user in user_list').pure-u-1-4.friend
+
+        a(ng-href='/get/{{user.user_id}}') 
+            img(ng-src='{{user.photo}}', ng-if='user.photo_100')
+
+        img(src='http://vk.com/images/deactivated_a.gif', ng-if='!user.photo_100')
+
+        aside.friend-caption
+            span(ng-show='user.online') Online
+            div {{user.first_name}} {{user.last_name}}
+    
+

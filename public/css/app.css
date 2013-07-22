@@ -1,0 +1,371 @@
+/* app css stylesheet */
+
+@font-face {
+    font-family: "proxima-nova";
+    src: local("☺"), url("type/proxima-nova.otf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proxima-nova-bold";
+    font-weight: bold;
+    src: local("☺"), url("type/proxima-nova-bold.otf") format("opentype");
+}
+
+
+body {
+    font-family: "proxima-nova", sans-serif;
+    
+}
+
+b, strong {
+    font-family: "proxima-nova-bold", sans-serif;
+}
+
+abbr {
+    cursor: help;
+}
+
+#page {
+    min-height: 400px;
+    padding-bottom: 25px;
+    background-color: #dedede;
+    background-size: 10px 10px;
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}
+
+#page h2, .progress-title, label {
+    text-shadow: 0 1px 1px #fff;
+}
+
+.header {
+    letter-spacing: -1px;
+}
+
+img.header-img, .post-header .source img {
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.pure-menu-heading img, img.header-img, .post-header .source img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.pure-menu-heading {
+    text-transform: capitalize!important;
+}
+
+.pure-menu-heading i{
+    color: #0070bb;
+}
+
+.l-box {
+    padding: .5em 2em;
+}
+
+.pure-g-r {
+    letter-spacing: 0!important;
+}
+
+#home {
+    text-align: center;
+}
+
+.friend, .text-box {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    width: 250px;
+}
+
+.friend img {
+    opacity: 0.85;
+    min-height: 250px;
+}
+.friend img:hover {
+    opacity: 1;
+}
+
+.friend aside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em 0.5em;
+    color: white;
+    width: 100%;
+    font-size: 80%;
+    text-align: right;
+    background: -moz-linear-gradient(top,  rgba(16,27,30,0) 0%, rgba(12,2,2,1) 90%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,27,30,0)), color-stop(90%,rgba(12,2,2,1))); /* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Chrome10+, Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00101b1e', endColorstr='#0c0202',GradientType=0 ); /* IE6-9 */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.friend aside span {
+    color: #ccc;
+}
+
+.friend aside span a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.pure-menu i, .post-header .likes i, .audio i, button i {
+    margin-right: 5px;
+}
+
+#posts {
+    text-align: center;
+}
+
+.post {
+    /*overflow: hidden;*/
+    position: relative;
+    width: 45%;
+    /*height: 250px;*/
+    margin: 7px;
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.7);
+    background-color: #fbfbfb;
+}
+
+.post-inner {
+    overflow: hidden;
+    height: 250px;
+}
+
+.post-inner-open {
+    height: 100%;
+}
+
+.post-inner .space {
+    height: 25px;
+}
+
+.post-header {
+    height: 60px;
+    margin-top: 5px;
+}
+
+.post-header .source {
+    float: left;
+    margin-left: 5px;
+}
+
+.post-header .source a {
+    text-decoration: none;
+}
+
+.post-header .source span {
+    font-weight: bold;
+    color: #2B587A;
+}
+.post-header .source span:hover {
+    border-bottom: 1px solid #000;
+}
+.post-header .source span:hover {
+    color: #000;
+}
+
+.post-header .likes {
+    float: right;
+    color: #0070bb;
+    margin-top: 17px;
+    text-shadow: 0 1px 2px #aaa;
+}
+
+.post-header .likes span {
+    margin-right: 10px;
+}
+
+.post .text {
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.post .text a {
+    text-decoration: none;
+    color: #2B587A;
+}
+.post .text a:hover {
+    text-decoration: underline;
+}
+
+.post aside {
+    position: absolute;
+}
+
+.post aside.showmore {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgba(218, 196, 196, 0.8) 90%);
+    color: #ddd;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.65);
+}
+
+.post aside.direct-link {
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
+
+.post aside.direct-link a {
+    text-decoration: none;
+    color: #ccc;
+}
+.post aside.direct-link a:hover {
+    color: #0070bb;
+}
+
+.attachment .photo, .attachment .graffiti {
+    display: inline-block;
+}
+
+.attachment .audio {
+    text-align: left;
+}
+
+.attachment .audio a {
+    font-size: 12px;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+.attachment .audio a:hover {
+    background-color: #dedede;
+}
+
+.attachment .audio .artist, .attachment .audio i {
+    font-weight: bold;
+    color: #2B587A;
+}
+
+.attachment .audio .title {
+    color: #000;
+}
+
+#processing {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#processing .progress, #processing .progress-title, #processing .progress-close {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    color: #666;
+}
+
+#processing button {
+    margin-right: 8px;
+}
+
+button {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.pure-button-error {
+    background: rgb(202, 60, 60);
+    color: white !important;
+}
+
+.pure-button-success {
+    background: rgb(28, 184, 65);
+}
+
+.pure-menu-heading .user-image {
+    width: 36px;
+}
+
+.footer {
+    height: 36px;
+    background-color: #ddd;
+    box-shadow: 0px -3px 7px rgba(0,0,0,0.3);
+}
+
+.footer .content {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    color: #aaa;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.footer .content .author {
+    float: left;
+    line-height: 36px;
+}
+
+.footer .content .author a {
+    color: #888;
+    text-decoration: none;
+}
+.footer .content .author a:hover {
+    border-bottom: 1px dashed #888;
+    color: #666;
+}
+
+.footer .content .icons {
+    float: right;
+    margin-top: 2px;
+}
+
+.footer .content .icons i {
+    margin-right: 10px;
+}
+
+.footer .content .icons a {
+    text-decoration: none;
+    color: #888;
+}
+
+.footer .content .icons a:hover {
+    color: #666;
+}
+
+#login-page {
+    width: 100%;
+}
+
+#login-page .description, #settings {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: left;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.7);
+}
+
+#login-page .login-button {
+    text-align: center;
+}
+
+#settings .pure-controls {
+    margin: 0 10px 0 0;
+    float: right;
+}
+
+#settings label {
+    font-size: 12px;
+}
+
+span.value {
+    font-size: 12px;
+    margin-left: 10px;
+}

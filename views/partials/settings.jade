@@ -1,0 +1,27 @@
+div(ng-include='"partials/menu"').header
+
+div.pure-u-1
+    div.l-box
+        h2 Настройки
+
+#settings
+    form.pure-form.pure-form-aligned
+        fieldset
+            div.pure-control-group
+                label(for="update") Частота обновления
+                select(ng-model='data.update', ng-change='changed()', ng-options='k as v for (k, v) in updates', name='update')#update
+                span.value минут 
+
+            div.pure-control-group
+                label(for="depth") 
+                    Глубина 
+                    abbr(title='Количество последних записей, запрашиваемых из каждого сообщества. Чем больше записей, тем дольше обработка.') просмотра
+                select(ng-model='data.depth', ng-change='changed()', ng-options='k as v for (k, v) in depths', name='depth')#depth
+                span.value записей
+
+            div.pure-controls
+                button(ng-click='saveSettings()', ng-class='{"pure-button-disabled": saved}').pure-button.pure-button-primary
+                    i(ng-class='{"icon-save": !saved, "icon-ok": saved}')
+                    Сохранить
+
+

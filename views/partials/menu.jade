@@ -1,0 +1,22 @@
+div.pure-menu.pure-menu-open.pure-menu-horizontal
+    a.pure-menu-heading(href='/')
+        i(ng-show='!user').icon-heart.icon-large
+        img(ng-src='{{user.photo_50}}', ng-show='user').user-image
+        span {{user.first_name}} {{user.last_name}}
+    ul 
+        li(ng-class='{"pure-menu-disabled":!session, "pure-menu-selected":uri=="home"}')
+            a(href='/home')
+                i.icon-male
+                span Мои друзья
+        li(ng-class='{"pure-menu-disabled":!session, "pure-menu-selected":uri=="settings"}')
+            a(href='settings')
+                i.icon-cog
+                span Мои настройки
+        li(ng-class='{"pure-menu-selected":uri=="login"}')
+            a(href='/login', ng-show='!session')
+                i.icon-signin
+                span Войти
+            a(href='/logout', ng-show='session')
+                i.icon-signout
+                span Выйти
+
