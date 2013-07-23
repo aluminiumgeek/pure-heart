@@ -14,14 +14,14 @@
 
 
 html, body {
-    font-family: "proxima-nova", sans-serif;
+    font-family: "proxima-nova";
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 b, strong {
-    font-family: "proxima-nova-bold", sans-serif;
+    font-family: "proxima-nova-bold";
 }
 
 abbr {
@@ -163,7 +163,12 @@ img.header-img, .post-header .source img {
 
 .post-header .source {
     float: left;
+    text-align: left;
     margin-left: 5px;
+    position: absolute;
+    height: 58px;
+    overflow: hidden;
+    width: 80%;
 }
 
 .post-header .source a {
@@ -197,6 +202,7 @@ img.header-img, .post-header .source img {
     text-align: left;
     margin-bottom: 5px;
     padding: 5px;
+    clear: both;
 }
 
 .post .text a {
