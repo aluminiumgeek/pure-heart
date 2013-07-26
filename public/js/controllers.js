@@ -149,7 +149,7 @@ angular.module('pureheart.controllers', []).
                         }
                     });
 
-                    groupsWallGet($scope, groups, uid, 0);
+                    vkUtils.groupsWallGet($scope, groups, uid, 0);
                 }
             });
         }
