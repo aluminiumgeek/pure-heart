@@ -84,7 +84,7 @@ run(function($rootScope, $http, $location, stopGettingData) {
         $rootScope.settings = settings;
     }
 
-    $rootScope.authInfo = function(response, logout) {
+    $rootScope.authInfo = function(response) {
         if (response.session && !$rootScope.session) {
             $rootScope.session = response.session;
             $rootScope.getSettings();

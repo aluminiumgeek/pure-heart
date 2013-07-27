@@ -25,12 +25,6 @@ angular.module('pureheart.controllers', []).
     $scope.vklogout = function() {
         VK.Auth.logout();
     }
-
-    if (!$scope.session) {
-        /*setTimeout( function(){
-        $scope.showlogin = true;
-        VK.UI.button('login_button')}, 350);*/
-    }
   }).
   controller('LogoutCtrl', function($scope, $rootScope, $location) {
     $rootScope.session = false
