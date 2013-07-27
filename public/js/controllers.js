@@ -33,9 +33,8 @@ angular.module('pureheart.controllers', []).
         VK.UI.button('login_button');
     }
   }).
-  controller('LogoutCtrl', function($scope, $location) {
-    $scope.session = false;
-    $scope.user = false;
+  controller('LogoutCtrl', function($scope, $rootScope, $location) {
+    $rootScope.user = false;
 
     VK.Auth.logout(); 
     
