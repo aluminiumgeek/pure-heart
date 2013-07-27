@@ -119,7 +119,7 @@ angular.module('pureheart.controllers', []).
                 totalHeight += document.getElementById(b_id).offsetHeight;
             });
 
-            return totalHeight > 250;
+            return totalHeight > 250 - 10;
         }
         
         $scope.closeProgress = function() {

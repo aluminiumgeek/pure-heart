@@ -19,18 +19,22 @@ config(function ($routeProvider, $locationProvider) {
             controller: 'LoginCtrl'
         }).
         when('/home', {
+            title: 'Мои друзья',
             templateUrl: 'partials/home',
             controller: 'HomeCtrl'
         }).
         when('/get/:user_id', {
+            title: 'Понравившиеся записи',
             templateUrl: 'partials/get',
             controller: 'GetCtrl'
         }).
         when('/settings', {
+            title: 'Мои настройки',
             templateUrl: 'partials/settings',
             controller: 'SettingsCtrl'
         }).
         when('/logout', {
+            title: 'Выход',
             templateUrl: 'partials/login',
             controller: 'LogoutCtrl'
         }).
@@ -42,20 +46,28 @@ config(function ($routeProvider, $locationProvider) {
 }).
 run(function($rootScope, $http, $location, stopGettingData) {
     VK.init({
-        apiId: 0
+        apiId: 3772623
     });
     
     $rootScope.session = false;
     $rootScope.user_list = [];
 
     $rootScope.$on('$routeChangeStart', function() {
-        
+       // TODO: smooth loading 
     });
     
-    $rootScope.$on('$routeChangeSuccess', function() {
+    $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
         stopGettingData($location);
 
         $rootScope.uri = $location.path().substring(1);
+        
+        if (current.$$route.title) {
+            $rootScope.title = current.$$route.title;
+        }
+        else {
+            $rootScope.title = 'Мне нравится';
+        }
+
     });
 
     $rootScope.getSettings = function() {
