@@ -12,7 +12,7 @@ config(function ($routeProvider, $locationProvider) {
     $routeProvider.
         when('/', {
             templateUrl: 'partials/login',
-            controller: 'MainCtrl'
+            controller: 'LoginCtrl'
         }).
         when('/login', {
             templateUrl: 'partials/login',
@@ -46,7 +46,7 @@ config(function ($routeProvider, $locationProvider) {
 }).
 run(function($rootScope, $http, $location, stopGettingData) {
     VK.init({
-        apiId: 0
+        apiId: 3772623
     });
     
     $rootScope.session = false;

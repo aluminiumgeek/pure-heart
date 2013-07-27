@@ -13,8 +13,13 @@ angular.module('pureheart.controllers', []).
   }).
   controller('LoginCtrl', function($scope, $location) {
     VK.Auth.getLoginStatus($scope.authInfo);
-   
-    $scope.showlogin = true;
+  
+    if ($scope.user) {
+        $location.path('/home');
+    }
+    else {
+        $scope.showlogin = true;
+    }
  
     $scope.vklogin = function() {
         VK.Auth.login($scope.authInfo);
