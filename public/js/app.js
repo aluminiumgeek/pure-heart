@@ -46,7 +46,7 @@ config(function ($routeProvider, $locationProvider) {
 }).
 run(function($rootScope, $http, $location, stopGettingData) {
     VK.init({
-        apiId: 3772623
+        apiId: 0
     });
     
     $rootScope.session = false;
@@ -84,7 +84,7 @@ run(function($rootScope, $http, $location, stopGettingData) {
         $rootScope.settings = settings;
     }
 
-    $rootScope.authInfo = function(response) {
+    $rootScope.authInfo = function(response, logout) {
         if (response.session && !$rootScope.session) {
             $rootScope.session = response.session;
             $rootScope.getSettings();
@@ -100,6 +100,8 @@ run(function($rootScope, $http, $location, stopGettingData) {
         }
         else {
             $rootScope.session = false;
+
+            VK.UI.button('login_button');
         }
     }
 

@@ -27,17 +27,21 @@ angular.module('pureheart.controllers', []).
     }
 
     if (!$scope.session) {
-        setTimeout( function(){
+        /*setTimeout( function(){
         $scope.showlogin = true;
-        VK.UI.button('login_button')}, 250);
+        VK.UI.button('login_button')}, 350);*/
     }
   }).
   controller('LogoutCtrl', function($scope, $rootScope, $location) {
+    $rootScope.session = false
     $rootScope.user = false;
+    $rootScope.user_list = [];
 
-    VK.Auth.logout(); 
+    VK.Auth.logout(function() {
+        window.location.href = '/login';
+    }); 
     
-    $location.path('/login');
+    //$location.path('/login');
   }).
   controller('HomeCtrl', function($scope, $rootScope, $location) {
     if ($scope.session) {
