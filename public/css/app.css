@@ -40,6 +40,7 @@ abbr {
 #page {
     min-height: 100%;
     padding-bottom: 70px;
+    overflow: hidden;
 }
 
 #page h2, .progress-title, label {
@@ -53,6 +54,7 @@ abbr {
 img.header-img, .post-header .source img {
     border: 1px solid #ccc;
     padding: 2px;
+    background-color: #fff;
 }
 
 .pure-menu-heading img, img.header-img, .post-header .source img {
