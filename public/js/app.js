@@ -52,10 +52,6 @@ run(function($rootScope, $http, $location, stopGettingData) {
     $rootScope.session = false;
     $rootScope.user_list = [];
 
-    $rootScope.$on('$routeChangeStart', function() {
-       // TODO: smooth loading 
-    });
-    
     $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
         stopGettingData($location);
 
@@ -67,7 +63,6 @@ run(function($rootScope, $http, $location, stopGettingData) {
         else {
             $rootScope.title = 'Мне нравится';
         }
-
     });
 
     $rootScope.getSettings = function() {

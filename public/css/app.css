@@ -62,6 +62,7 @@ img.header-img, .post-header .source img {
 
 .pure-menu-heading {
     text-transform: capitalize!important;
+    line-height: 36px!important;
 }
 
 .pure-menu-heading i{
@@ -386,3 +387,39 @@ span.value {
     font-size: 12px;
     margin-left: 10px;
 }
+
+/* Animations */
+
+.enter-animation, .user-enter, .post-enter {
+    transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+}
+
+.enter-animation {
+    right: -15px;
+    opacity: 0;
+    display: block;
+}
+.enter-animation.enter-animation-active {
+    right: 0;
+    opacity: 1;
+}
+
+.user-enter {
+    right: -15px;
+    opacity: 0;
+}
+.user-enter.user-enter-active {
+    right: 0;
+    opacity: 1;
+}
+
+.post-enter {
+    left: -15px;
+    opacity: 0;
+}
+.post-enter.post-enter-active {
+    left: 0;
+    opacity: 1;
+}
+

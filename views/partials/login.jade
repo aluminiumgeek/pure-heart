@@ -1,5 +1,3 @@
-div(ng-include='"partials/menu"').header
-
 #login-page(ng-show='showlogin')
     div.l-box
         h2 Вход
@@ -8,7 +6,7 @@ div(ng-include='"partials/menu"').header
 
         p.login-button
             span(ng-click='vklogin()')#login_button
-                Войти
+            
 
 #already-logged(ng-if='!showlogin')
     div.l-box

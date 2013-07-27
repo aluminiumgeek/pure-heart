@@ -1,5 +1,3 @@
-div(ng-include='"partials/menu"').header
-
 div.pure-u-1
     div.l-box
         h2
@@ -23,48 +21,48 @@ div.pure-u-1
             Закрыть
 
 #posts
-    div(ng-repeat='post in posts').pure-u-1-2.post
-      span(ng-show='p_id = "p" + post.from_id + "_" + post.id')
+    div(ng-repeat='post in posts', ng-animate='{enter: "post-enter"}', style='transition-delay: {{$index * 80}}ms').pure-u-1-2.post
+        span(ng-show='p_id = "p" + post.from_id + "_" + post.id')
 
-      div(ng-class='{"post-inner":true, "post-inner-open":post.open}', id='{{p_id}}')
-        div(id='h{{p_id}}').post-header
-            div.source
-                a(ng-href='http://vk.com/{{post.source.screen_name}}')
-                    img(ng-src='{{post.source.photo}}')
-                    span {{post.source.name}}
+        div(ng-class='{"post-inner":true, "post-inner-open":post.open}', id='{{p_id}}')
+          div(id='h{{p_id}}').post-header
+              div.source
+                  a(ng-href='http://vk.com/{{post.source.screen_name}}')
+                      img(ng-src='{{post.source.photo}}')
+                      span {{post.source.name}}
 
-            div.likes
-                i.icon-globe
-                span {{post.reposts.count}}
-                i.icon-heart
-                span {{post.likes.count}}
+              div.likes
+                  i.icon-globe
+                  span {{post.reposts.count}}
+                  i.icon-heart
+                  span {{post.likes.count}}
         
-        div(ng-bind-html-unsafe='post.text', id='t{{p_id}}').text
+          div(ng-bind-html-unsafe='post.text', id='t{{p_id}}').text
         
-        div(id='a{{p_id}}').attachments
-            div(ng-repeat='attach in post.attachments').attachment
-                a(ng-href='{{attach.photo.src_big}}', ng-if='attach.photo', target='_blank').photo
-                    img(ng-src='{{attach.photo.src}}')
+          div(id='a{{p_id}}').attachments
+              div(ng-repeat='attach in post.attachments').attachment
+                  a(ng-href='{{attach.photo.src_big}}', ng-if='attach.photo', target='_blank').photo
+                      img(ng-src='{{attach.photo.src}}')
                 
-                a(ng-href='{{attach.graffiti.src_big}}', ng-if='attach.graffiti')
-                    img(ng-src='{{attach.graffiti.src}}').graffiti
+                  a(ng-href='{{attach.graffiti.src_big}}', ng-if='attach.graffiti')
+                      img(ng-src='{{attach.graffiti.src}}').graffiti
 
-                div(ng-if='attach.audio').audio
-                    a(
-                        ng-if='attach.audio', 
-                        ng-href='http://vk.com/search?q={{attach.audio.artist}} - {{attach.audio.title}}&section=audio', 
-                        target='_blank'
-                    )
-                        i.icon-play
-                        span.artist {{attach.audio.artist}} 
-                        span.title – {{attach.audio.title}}
+                  div(ng-if='attach.audio').audio
+                      a(
+                          ng-if='attach.audio', 
+                          ng-href='http://vk.com/search?q={{attach.audio.artist}} - {{attach.audio.title}}&section=audio', 
+                          target='_blank'
+                      )
+                          i.icon-play
+                          span.artist {{attach.audio.artist}} 
+                          span.title – {{attach.audio.title}}
 
-        div(ng-if='post.open').space
+          div(ng-if='post.open').space
 
-      aside(ng-click='post.open = !post.open', ng-if='showMore(post)').showmore
-          i(ng-class='{"icon-double-angle-up":post.open, "icon-double-angle-down":!post.open, "icon-2x":true}')
+        aside(ng-click='post.open = !post.open', ng-if='showMore(post)').showmore
+            i(ng-class='{"icon-double-angle-up":post.open, "icon-double-angle-down":!post.open, "icon-2x":true}')
 
-      aside.direct-link
-          a(ng-href='http://vk.com/wall{{post.from_id}}_{{post.id}}')
-              i.icon-vk
+        aside.direct-link
+            a(ng-href='http://vk.com/wall{{post.from_id}}_{{post.id}}')
+                i.icon-vk
 

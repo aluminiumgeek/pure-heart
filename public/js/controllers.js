@@ -14,7 +14,7 @@ angular.module('pureheart.controllers', []).
   controller('LoginCtrl', function($scope, $location) {
     VK.Auth.getLoginStatus($scope.authInfo);
    
-    $scope.showlogin = false;
+    $scope.showlogin = true;
  
     $scope.vklogin = function() {
         VK.Auth.login($scope.authInfo);
@@ -24,13 +24,12 @@ angular.module('pureheart.controllers', []).
    
     $scope.vklogout = function() {
         VK.Auth.logout();
-
-    	$scope.showlogin = true;
     }
 
     if (!$scope.session) {
+        setTimeout( function(){
         $scope.showlogin = true;
-        VK.UI.button('login_button');
+        VK.UI.button('login_button')}, 250);
     }
   }).
   controller('LogoutCtrl', function($scope, $rootScope, $location) {
@@ -57,10 +56,15 @@ angular.module('pureheart.controllers', []).
 
                         user_list.push(user);
                     });
-
-                    $rootScope.user_list = user_list;
                     
-                    $scope.$apply();
+                    setTimeout(
+                        function() {
+                            $rootScope.user_list = user_list;
+                    
+                            $scope.$apply();
+                        },
+                        200
+                    );
                 }
             });
         }
@@ -94,7 +98,12 @@ angular.module('pureheart.controllers', []).
         // get saved posts
         $http.get('/api/posts/' + uid).
             success(function(data) {
-                $scope.posts = data.posts;
+                setTimeout(
+                    function() {
+                        $scope.posts = data.posts;
+                    },
+                    200
+                );
             });
 
         // method saves new posts

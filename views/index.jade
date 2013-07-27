@@ -4,7 +4,9 @@ block body
     div(id='vk_api_transport')
 
     div#container
-        div(ng-view)#page
+        div(ng-include='"partials/menu"').header
+
+        div(ng-view ng-animate='{enter: "enter-animation", leave: "leave-animation"}')#page
 
         div.footer
             div.content
