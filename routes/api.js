@@ -39,7 +39,14 @@ exports.addPost = function (req, res) {
     var post = req.body.post;
 
     db.collection('posts', function(err, collection) {
-        collection.save(post, {safe: true}, function(err, res) {});
+        collection.findOne({id: post.id, from_id: post.from_id, user_id: post.user_id}, function(err, item) {
+            if (item) {
+                console.log('Attempt to insert an existing post');
+            }
+            else {
+                collection.save(post, {safe: true}, function(err, res) {});
+            }
+        });
     });
 };
 

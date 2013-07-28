@@ -79,6 +79,7 @@ angular.module('pureheart.controllers', []).
   controller('GetCtrl', function($scope, $http, $routeParams, $location) {
     if ($scope.session) {
         $scope.posts = [];
+        $scope.showProgress = true;
 
         var uid = $routeParams.user_id;
 
@@ -104,6 +105,8 @@ angular.module('pureheart.controllers', []).
                 setTimeout(
                     function() {
                         $scope.posts = data.posts;
+
+                        $scope.getPosts();
                     },
                     200
                 );
@@ -164,8 +167,6 @@ angular.module('pureheart.controllers', []).
                 }
             });
         }
-
-        $scope.getPosts();
 
         $scope.$watch('iterFull', function() {
             $scope.percent = $scope.iterFull * 100 / $scope.settings.depth / $scope.cnt;
