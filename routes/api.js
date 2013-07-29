@@ -27,7 +27,7 @@ exports.posts = function (req, res) {
     var user_id = parseInt(req.params.user_id);
 
     db.collection('posts', function(err, collection) {
-        collection.find({user_id: user_id}).toArray(function(err, posts) {
+        collection.find({user_id: user_id}).sort({_id: -1}).toArray(function(err, posts) {
             res.json({
                 posts: posts
             });
