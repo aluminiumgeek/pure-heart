@@ -3,7 +3,7 @@ div.pure-u-1
         h2 Друзья
 
 #home(ng-show='user_list')
-    div(ng-repeat='user in user_list', ng-animate='{enter: "user-enter"}', style='transition-delay: {{$index * 80}}ms').pure-u-1-4.friend
+    div(ng-repeat='user in user_list').pure-u-1-4.friend
 
         a(ng-href='/get/{{user.user_id}}') 
             img(ng-src='{{user.photo}}', ng-if='user.photo_100')
